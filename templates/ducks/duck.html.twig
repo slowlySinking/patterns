@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Strategy!{% endblock %}
+{% block stylesheets %}
+    <style>
+        body{
+            background: #b2b2b0;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <h1 style="text-align: center; color: #03798a">Ducks</h1>
+    <br>
+    {% for duck in ducks %}
+        <h3 style="color: #03798a">{{ duck.name }}</h3>
+        <h4 style="color: #333">{{ duck.quack }}</h4>
+        <h4 style="color: #333">{{ duck.fly }}</h4>
+        <hr>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Abstract Factory!{% endblock %}
+{% block stylesheets %}
+    <style>
+        body{
+            background: #b2b2b0;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <h1 style="text-align: center; color: #03798a">Order pizza</h1>
+    <br>
+
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}
+{% block javascripts %}{% endblock %}

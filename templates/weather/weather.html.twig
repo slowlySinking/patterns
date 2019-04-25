@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Observer!{% endblock %}
+{% block stylesheets %}
+    <style>
+        body{
+            position: relative;
+            background: #b2b2b0;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+        .button{
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            width: 110px;
+            text-align: center;
+            text-decoration: none;
+            color: #03798a;
+            font-size: 20px;
+            margin-left: -65px;
+            padding: 5px 10px;
+            border: 2px solid #03798a;
+            border-radius: 5px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <h1 style="text-align: center; color: #03798a">Weather Station</h1>
+    <a href="{{ path('weather_create') }}" class="button">Add weather</a>
+    <br>
+    <br>
+    {% if data is defined %}
+        <h3 style="text-align: center; color: #03798a">Current Weather</h3>
+        <h4 style="color: #333">Temperature: {{ data.currentWeather.temperature }}&deg;C</h4>
+        <h4 style="color: #333">Pressure: {{ data.currentWeather.pressure }}mm Hg</h4>
+        <h4 style="color: #333">Humidity: {{ data.currentWeather.humidity }}%</h4>
+        <hr>
+
+        <h3 style="text-align: center; color: #03798a">Average Weather Data</h3>
+        <h4 style="color: #333">Temperature: {{ data.averageWeather.temperature }}&deg;C</h4>
+        <h4 style="color: #333">Pressure: {{ data.averageWeather.pressure }}mm Hg</h4>
+        <h4 style="color: #333">Humidity: {{ data.averageWeather.humidity }}%</h4>
+        <hr>
+
+        <h3 style="text-align: center; color: #03798a">Weather Statistic</h3>
+        {% for statistic in data.weatherStatistic %}
+            <h4 style="color: #333">{{ statistic.record }}</h4>
+        {% endfor %}
+        <hr>
+        <br>
+    {% endif %}
+{% endblock %}
+{% block javascripts %}{% endblock %}

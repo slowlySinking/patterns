@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Abstract Factory!{% endblock %}
+{% block stylesheets %}
+    <style>
+        body{
+            background: #b2b2b0;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+        .button{
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            width: 110px;
+            text-align: center;
+            text-decoration: none;
+            color: #03798a;
+            font-size: 20px;
+            margin-left: -65px;
+            padding: 5px 10px;
+            border: 2px solid #03798a;
+            border-radius: 5px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <h1 style="text-align: center; color: #03798a">Pizzas</h1>
+    <a href="{{ path('pizza_create') }}" class="button">Order pizza</a>
+    <br>
+    <h2 style="color: #03798a">Orders:</h2>
+    {% for pizza in pizzas %}
+        <h3 style="color: #03798a">{{ pizza.name }}:</h3>
+        <ul>
+            <li style="color: #333">{{ pizza.dough }} dough</li>
+            <li style="color: #333">{{ pizza.sauce }} sauce</li>
+            <li style="color: #333">{{ pizza.cheese }} cheese</li>
+            <li style="color: #333">{{ pizza.clam }} clam</li>
+        </ul>
+        <hr>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}{% endblock %}

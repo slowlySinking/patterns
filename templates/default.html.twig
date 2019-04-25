@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patterns{% endblock %}
+{% block stylesheets %}
+    <style>
+        body{
+            background: #b2b2b0;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #03798a;
+            font-size: 20px;
+        }
+        li{
+            margin: 10px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <h1 style="text-align: center; color: #03798a">Patterns</h1>
+    <br>
+    <ul>
+        <li><a href="{{ path('ducks') }}">Strategy</a></li>
+        <li><a href="{{ path('weather') }}">Observer</a></li>
+        <li><a href="{{ path('pizza') }}">Abstract Factory</a></li>
+    </ul>
+{% endblock %}
+{% block javascripts %}{% endblock %}
